@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.ConfigureAppConfiguration(config =>{
+    var settings = config.Build();
+    config.AddAzureAppConfiguration("")
+})
 // Add services to the container.
 builder.Services.AddRazorPages();
 
